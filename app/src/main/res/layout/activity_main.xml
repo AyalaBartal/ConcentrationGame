@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".frontEnd.MainActivity"
     android:orientation="vertical"
    android:gravity="center">
 
@@ -44,64 +44,56 @@
         android:layout_height="0dp"
         android:layout_weight="8"
         android:background="@color/colorPrimary"
-        android:weightSum="12"
+        android:weightSum="2"
         android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
-            android:weightSum="12"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:id="@+id/line1"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <include layout="@layout/card"
+                android:id="@+id/card1"
                 android:layout_height="match_parent"
-                android:background="@color/purple"
-                android:gravity="center"
-                android:layout_weight="6"
-                android:layout_margin="20dp"
-                android:id="@+id/square1"
-                android:orientation="horizontal"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <include layout="@layout/card"
+                android:id="@+id/card2"
                 android:layout_height="match_parent"
-                android:background="@color/purple"
-                android:layout_weight="6"
-                android:gravity="center"
-                android:layout_margin="20dp"
-                android:id="@+id/square2"
-                android:orientation="horizontal"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
-            android:weightSum="12"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:id="@+id/line2"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <include layout="@layout/card"
+                android:id="@+id/card3"
                 android:layout_height="match_parent"
-                android:background="@color/purple"
-                android:gravity="center"
-                android:layout_weight="6"
-                android:layout_margin="20dp"
-                android:id="@+id/square3"
-                android:orientation="horizontal"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <include layout="@layout/card"
+                android:id="@+id/card4"
                 android:layout_height="match_parent"
-                android:background="@color/purple"
-                android:layout_weight="6"
-                android:gravity="center"
-                android:layout_margin="20dp"
-                android:id="@+id/square4"
-                android:orientation="horizontal"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"/>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -111,13 +103,34 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:background="@color/colorAccent"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="50dp"
             android:text="Your Score: " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="0"
+            android:id="@+id/yourScoreText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="/" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="2"
+            android:id="@+id/maxScoreText"/>
     </LinearLayout>
 
 </android.support.v7.widget.LinearLayoutCompat>
