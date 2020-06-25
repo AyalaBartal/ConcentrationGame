@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/blue1"
+    android:background="@drawable/shapes"
     android:padding="5dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="50dp"
+        android:gravity="center"
         android:visibility="invisible"
         android:id="@+id/cardText"/>
 

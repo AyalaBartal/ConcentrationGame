@@ -4,10 +4,10 @@ import java.util.List;
 
 public class TurnResult {
     public boolean correct;
-    public List<Pair> pairList;
+    public List<Card> cardList;
 
-    public TurnResult(List<Pair> pairList){
-        this.pairList = pairList;
+    public TurnResult(List<Card> cardList){
+        this.cardList = cardList;
     }
 
     public TurnResult(boolean correct){
