@@ -46,11 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void drawBoard(List<Card> cardList) {
         DrawFactory df = new DrawFactory(this);
-        LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(500, 500);
+        LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(0, 500, 1);
         cardParams.setMargins(50, 50, 50, 50);
-        HorizontalScrollView.LayoutParams hsvParams = new HorizontalScrollView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        DrawBoardService dbs = new DrawBoardService(cardList, df, cardParams, hsvParams);
-        dbs.draw(4, 4, R.id.content, R.id.cardText);
+        DrawBoardService dbs = new DrawBoardService(cardList, df, cardParams);
+        dbs.draw(4, 4);
     }
 
     private List<Card> createNewGame() {
@@ -59,14 +58,12 @@ public class MainActivity extends AppCompatActivity {
        return result.cardList;
     }
 
-
-
     private void createOnClickListener(final Card card) {
         View cardView = card.getCardView();
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (card.getCardText().getVisibility() == View.INVISIBLE) {
+                if (request.secondCard == null && card.getCardText().getVisibility() == View.INVISIBLE) {
                    card.getCardText().setVisibility(View.VISIBLE);
                     if (request.firstCard == null) {
                         request.firstCard = card;

@@ -15,27 +15,25 @@ public class DrawBoardService {
     private List<Card> cardList;
     private DrawFactory drawFactory;
     private LinearLayout.LayoutParams cardParams;
-    private HorizontalScrollView.LayoutParams svParams;
 
-    public DrawBoardService(List<Card> cardList, DrawFactory drawFactory, LinearLayout.LayoutParams cardParams, HorizontalScrollView.LayoutParams svParams){
+    public DrawBoardService(List<Card> cardList, DrawFactory drawFactory, LinearLayout.LayoutParams cardParams){
         this.cardList = cardList;
         this.drawFactory = drawFactory;
         this.cardParams = cardParams;
-        this.svParams = svParams;
     }
 
-    public void draw(int numberOfRows, int numberOfColumns, int contentViewId, int textViewId) {
-        List<HorizontalScrollView> hsvList = new ArrayList<>();
+    public void draw(int numberOfRows, int numberOfColumns) {
+        List<LinearLayout> linesList = new ArrayList<>();
         for (int row = 0; row < numberOfRows; row++) {
             List<View> cardViewList = new ArrayList<>();
             for (int column = 0; column < numberOfColumns; column++) {
                 Card card = cardList.get((row * numberOfColumns) + column);
-                drawFactory.connectCardAndViews(card, cardParams, textViewId);
+                drawFactory.connectCardAndViews(card, cardParams);
                 cardViewList.add(card.getCardView());
             }
-            hsvList.add(drawFactory.createHorizontalScrollViewContent(svParams, cardViewList));
+            linesList.add(drawFactory.createHorizontalLineOfCards(cardViewList));
         }
-        drawFactory.drawBoard(hsvList, contentViewId);
+        drawFactory.drawBoard(linesList);
     }
 
 }

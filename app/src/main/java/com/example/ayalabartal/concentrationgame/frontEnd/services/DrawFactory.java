@@ -22,32 +22,28 @@ public class DrawFactory {
         this.activity = activity;
     }
 
-    void connectCardAndViews(Card card, LinearLayout.LayoutParams params, int textViewId){
+    void connectCardAndViews(Card card, LinearLayout.LayoutParams params){
         LayoutInflater layoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View cardView = layoutInflater.inflate(R.layout.card, null);
         cardView.setLayoutParams(params);
         card.setCardView(cardView);
-        card.setCardText((TextView) card.getCardView().findViewById(textViewId));
+        card.setCardText((TextView) card.getCardView().findViewById(R.id.cardText));
         card.getCardText().setText(card.getContent());
     }
 
-    HorizontalScrollView createHorizontalScrollViewContent(HorizontalScrollView.LayoutParams params, List<View> cardList){
+    LinearLayout createHorizontalLineOfCards(List<View> cardList){
         LinearLayout lineLayout =new LinearLayout(activity);
         for (View cardView: cardList) {
             lineLayout.addView(cardView);
         }
-        HorizontalScrollView hsv = new HorizontalScrollView(activity);
-        hsv.setLayoutParams(params);
-        hsv.addView(lineLayout);
-        return hsv;
+        return lineLayout;
     }
 
-
-    void drawBoard(List<HorizontalScrollView> hsvList, int contentViewId) {
-        ScrollView contentScrollView =  activity.findViewById(contentViewId);
+    void drawBoard(List<LinearLayout> hsvList) {
+        ScrollView contentScrollView =  activity.findViewById(R.id.content);
         LinearLayout contentLayout = new LinearLayout(activity);
         contentLayout.setOrientation(LinearLayout.VERTICAL);
-        for (HorizontalScrollView hsv: hsvList) {
+        for (LinearLayout hsv: hsvList) {
             contentLayout.addView(hsv);
         }
         contentScrollView.addView(contentLayout);
