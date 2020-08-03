@@ -1,7 +1,6 @@
-package com.example.ayalabartal.concentrationgame.frontEnd.services;
+package com.example.ayalabartal.concentrationgame.ui.services;
 
 import android.view.View;
-import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.example.ayalabartal.concentrationgame.entities.Card;

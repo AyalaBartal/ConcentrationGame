@@ -1,10 +1,9 @@
-package com.example.ayalabartal.concentrationgame.frontEnd.services;
+package com.example.ayalabartal.concentrationgame.ui.services;
 
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;

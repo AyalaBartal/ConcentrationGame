@@ -26,8 +26,8 @@ public class BackEnd {
     private List<Card> createShuffledCardList(List<Pair> pairList) {
         List<Card> cardList = new ArrayList<Card>();
         for (Pair pair: pairList) {
-            cardList.add(pair.firstCard);
-            cardList.add(pair.secondCard);
+            cardList.add(pair.getFirstCard());
+            cardList.add(pair.getSecondCard());
         }
         Collections.shuffle(cardList);
         return cardList;
