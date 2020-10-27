@@ -1,4 +1,4 @@
-package com.example.ayalabartal.concentrationgame.ui.services;
+package com.example.ayalabartal.concentrationgame.mainActivity;
 
 import android.app.Activity;
 import android.content.Context;

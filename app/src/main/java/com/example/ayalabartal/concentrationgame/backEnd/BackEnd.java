@@ -13,24 +13,9 @@ public class BackEnd {
 
     List<Pair> pairList;
 
-    public TurnResult processRequest(TurnRequest request){
-        return request.firstTurn ?  createGame() : processTurn(request);
-    }
-
-    private TurnResult createGame() {
+    public List<Card> createGame() {
         List<Pair> pairList = createPairList();
-        List<Card> cardList = createShuffledCardList(pairList);
-        return new TurnResult(cardList);
-    }
-
-    private List<Card> createShuffledCardList(List<Pair> pairList) {
-        List<Card> cardList = new ArrayList<Card>();
-        for (Pair pair: pairList) {
-            cardList.add(pair.getFirstCard());
-            cardList.add(pair.getSecondCard());
-        }
-        Collections.shuffle(cardList);
-        return cardList;
+        return createShuffledCardList(pairList);
     }
 
     private List<Pair> createPairList() {
@@ -46,7 +31,17 @@ public class BackEnd {
         return pairList;
     }
 
-    private TurnResult processTurn(TurnRequest request) {
+    private List<Card> createShuffledCardList(List<Pair> pairList) {
+        List<Card> cardList = new ArrayList<Card>();
+        for (Pair pair: pairList) {
+            cardList.add(pair.getFirstCard());
+            cardList.add(pair.getSecondCard());
+        }
+        Collections.shuffle(cardList);
+        return cardList;
+    }
+
+    public TurnResult processTurn(TurnRequest request) {
         return new TurnResult(request.firstCard.getPairId() == request.secondCard.getPairId());
     }
 
