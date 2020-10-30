@@ -39,14 +39,25 @@
             android:orientation="horizontal"/>
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:id="@+id/content">
-    </ScrollView>
+        android:id="@+id/content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_game"
+            android:textSize="50sp"
+            android:padding="20dp"
+            android:background="@drawable/shapes"
+            android:textAllCaps="false"
+            android:id="@+id/newGameBtn"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,30 +67,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="Your Score: " />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="0"
-            android:id="@+id/yourScoreText"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="/" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:id="@+id/maxScoreText"/>
     </LinearLayout>
 
 </android.support.v7.widget.LinearLayoutCompat>

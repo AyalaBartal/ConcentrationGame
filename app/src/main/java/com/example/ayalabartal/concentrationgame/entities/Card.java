@@ -4,7 +4,9 @@ package com.example.ayalabartal.concentrationgame.entities;
 import android.view.View;
 import android.widget.TextView;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable {
     private int cardId;
     private int pairId;
     private String content;

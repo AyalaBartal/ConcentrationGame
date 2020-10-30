@@ -1,4 +1,4 @@
-package com.example.ayalabartal.concentrationgame.mainActivity;
+package com.example.ayalabartal.concentrationgame.concentrationGame;
 
 import com.example.ayalabartal.concentrationgame.backEnd.BackEnd;
 import com.example.ayalabartal.concentrationgame.entities.Card;

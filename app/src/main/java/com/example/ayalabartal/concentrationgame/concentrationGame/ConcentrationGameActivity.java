@@ -1,15 +1,16 @@
-package com.example.ayalabartal.concentrationgame.mainActivity;
+package com.example.ayalabartal.concentrationgame.concentrationGame;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.ayalabartal.concentrationgame.ExampleApp;
 import com.example.ayalabartal.concentrationgame.R;
-import com.example.ayalabartal.concentrationgame.di.ControllerComponent;
+import com.example.ayalabartal.concentrationgame.di.ConcentrationGameControllerComponent;
+import com.example.ayalabartal.concentrationgame.di.ExampleApp;
 import com.example.ayalabartal.concentrationgame.entities.Card;
 import com.example.ayalabartal.concentrationgame.entities.TurnRequest;
 import com.example.ayalabartal.concentrationgame.entities.TurnResult;
@@ -18,10 +19,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+public class ConcentrationGameActivity extends AppCompatActivity {
 
     @Inject
-    Controller controller;
+    ConcentrationGameController controller;
     private List<Card> cardList;
     private TurnRequest request;
     private int correctAnswerNumber;
@@ -30,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ControllerComponent component = ((ExampleApp)getApplication()).getAppComponent();
-        controller = component.getController();
-        cardList = controller.createNewGameRequest();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getBundleExtra("Card List");
+        ConcentrationGameControllerComponent component =  ((ExampleApp)getApplication()).getConcentrationGameControllerComponent();
+        controller = component.getConcentrationGameController();
+        cardList = (List<Card>) bundle.getSerializable("Card List");
         drawBoard();
-        for (Card card: cardList) {
-            createOnClickListener(card);
-        }
+        for (Card card : cardList) setOnClickListener(card);
         request = new TurnRequest();
     }
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         maxGameScore.setText(String.valueOf(size/2));
     }
 
-    private void createOnClickListener(final Card card) {
+    private void setOnClickListener(final Card card) {
         View cardView = card.getCardView();
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override

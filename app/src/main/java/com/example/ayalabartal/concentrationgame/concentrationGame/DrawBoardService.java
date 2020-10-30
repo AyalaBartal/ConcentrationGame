@@ -1,4 +1,4 @@
-package com.example.ayalabartal.concentrationgame.mainActivity;
+package com.example.ayalabartal.concentrationgame.concentrationGame;
 
 import android.view.View;
 import android.widget.LinearLayout;

@@ -1,17 +1,19 @@
 package com.example.ayalabartal.concentrationgame.di;
 
-import com.example.ayalabartal.concentrationgame.mainActivity.Controller;
-import com.example.ayalabartal.concentrationgame.mainActivity.ServerAdapter;
+import com.example.ayalabartal.concentrationgame.concentrationGame.ConcentrationGameController;
+import com.example.ayalabartal.concentrationgame.concentrationGame.ServerAdapter;
+import com.example.ayalabartal.concentrationgame.mainMenu.MainMenuController;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ControllerModule.class, ServerModule.class})
+@Component(modules = {ConcentrationGameControllerModule.class, ServerModule.class, MainMenuControllerModule.class})
 public interface AppComponent {
 
-    Controller getController();
+    ConcentrationGameController getController();
     ServerAdapter getServerAdapter();
+    MainMenuController getMainMenuController();
 
 }
