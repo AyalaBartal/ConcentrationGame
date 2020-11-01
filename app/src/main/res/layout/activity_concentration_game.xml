@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:background="@color/colorAccent"
         android:gravity="center"
         android:weightSum="10"
@@ -39,19 +39,20 @@
             android:orientation="horizontal"/>
     </LinearLayout>
 
-    <ScrollView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="0dp"
         android:layout_weight="8"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:id="@+id/content">
-    </ScrollView>
+    </android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:background="@color/colorAccent"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -59,26 +60,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="Your Score: " />
+            android:textSize="50sp"
+            android:text="@string/Your_Score" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="0"
+            android:textSize="50sp"
             android:id="@+id/yourScoreText"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="/" />
+            android:textSize="50sp"
+            android:text="@string/slash" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
+            android:textSize="50sp"
             android:id="@+id/maxScoreText"/>
     </LinearLayout>
 
