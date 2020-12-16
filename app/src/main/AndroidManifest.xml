@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".NumberOfPairs.NumberOfPairsActivity"
+            android:screenOrientation="landscape"/>
+        <activity
             android:name=".concentrationGame.ConcentrationGameActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".mainMenu.MainMenuActivity"
             android:screenOrientation="landscape">

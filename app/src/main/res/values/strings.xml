@@ -3,4 +3,8 @@
     <string name="new_game">New Game</string>
     <string name="Your_Score">Your Score: </string>
     <string name="slash"> / </string>
+    <string name="number_of_pairs">Choose number of pairs</string>
+    <string name="save_game">Save game</string>
+    <string name="continue_to_game">Continue to game</string>
+    <string name="choose_number_of_pair">Choose Number of Pairs</string>
 </resources>
